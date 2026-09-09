@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mes Patrio: Septiembre en México</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;600;700;800&family=Libre+Franklin:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #006847;
+      --verde-oscuro: #004d35;
+      --rojo: #ce1126;
+      --tinta: #26332e;
+      --crema: #f7f4ed;
+      --papel: #fffdf8;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      width: 100%;
+      color: var(--tinta);
+      font-family: "Libre Franklin", sans-serif;
+      background: var(--crema);
+    }
+    .display-font { font-family: "Alegreya", serif; }
+    .page-shell { width: 100%; overflow: hidden; }
+    .ink-rule { height: 3px; width: 70px; background: var(--rojo); }
+    .section-kicker {
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-weight: 700;
+      color: var(--verde);
+    }
+    .hero-panel {
+      position: relative;
+      isolation: isolate;
+      min-height: 560px;
+    }
+    .hero-panel::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(90deg, rgba(0, 54, 37, .94) 0%, rgba(0, 54, 37, .8) 45%, rgba(0, 54, 37, .35) 100%);
+    }
+    .hero-photo {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hero-ribbon {
+      border-left: 4px solid var(--rojo);
+      background: rgba(255,255,255,.13);
+      backdrop-filter: blur(5px);
+    }
+    .timeline-line {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 17px;
+      width: 2px;
+      background: linear-gradient(var(--verde), var(--rojo));
+    }
+    .timeline-entry { position: relative; padding-left: 58px; }
+    .timeline-dot {
+      position: absolute;
+      left: 7px;
+      top: 21px;
+      width: 21px;
+      height: 21px;
+      border: 4px solid var(--papel);
+      border-radius: 999px;
+      background: var(--verde);
+      box-shadow: 0 0 0 2px var(--verde);
+    }
+    .timeline-entry:last-child .timeline-dot {
+      background: var(--rojo);
+      box-shadow: 0 0 0 2px var(--rojo);
+    }
+    .person-card {
+      overflow: hidden;
+      border-top: 5px solid var(--verde);
+      background: var(--papel);
+      box-shadow: 0 12px 30px rgba(23, 45, 35, .08);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .person-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 38px rgba(23, 45, 35, .14);
+    }
+    .person-card.red-top { border-color: var(--rojo); }
+    .person-image { width: 100%; height: 280px; object-fit: cover; object-position: top; background: #d8ded9; }
+    .fact-card {
+      border: 1px solid #dfdfd5;
+      background: var(--papel);
+      transition: border-color .2s ease, transform .2s ease;
+    }
+    .fact-card:hover { border-color: var(--verde); transform: translateY(-3px); }
+    details {
+      border-bottom: 1px solid #d8d9cf;
+      background: rgba(255,255,255,.55);
+    }
+    details[open] { background: #fffdf8; }
+    summary {
+      cursor: pointer;
+      list-style: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: "+";
+      color: var(--rojo);
+      font-family: "Alegreya", serif;
+      font-size: 1.8rem;
+      line-height: 1;
+    }
+    details[open] summary::after { content: "−"; }
+    a:focus-visible, summary:focus-visible {
+      outline: 3px solid #f4be2c;
+      outline-offset: 4px;
+    }
+    .reveal { animation: rise .65s ease both; }
+    .reveal-delay { animation: rise .7s .16s ease both; }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 640px) {
+      .hero-panel { min-height: 600px; }
+      .hero-panel::after { background: linear-gradient(180deg, rgba(0,54,37,.92), rgba(0,54,37,.78)); }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+
+    <header class="sticky top-0 z-30 border-b border-stone-200 bg-[#fffdf8]/95 backdrop-blur">
+      <nav class="mx-auto flex max-w-7xl items-center justify-between gap-5 px-5 py-4 sm:px-8" aria-label="Navegación principal">
+        <a href="#inicio" class="display-font text-2xl font-bold no-underline text-[#26332e]">Mes Patrio</a>
+        <div class="hidden items-center gap-5 text-sm font-semibold md:flex">
+          <a class="no-underline text-[#26332e] transition hover:text-[#ce1126]" href="#fechas">Fechas</a>
+          <a class="no-underline text-[#26332e] transition hover:text-[#ce1126]" href="#personajes">Personajes</a>
+          <a class="no-underline text-[#26332e] transition hover:text-[#ce1126]" href="#curiosidades">Curiosidades</a>
+          <a class="no-underline rounded-full px-4 py-2 text-white bg-[#006847] transition hover:brightness-90" href="#mitos">Mitos</a>
+        </div>
+        <a class="text-sm font-bold no-underline text-[#006847] md:hidden" href="#fechas">Fechas</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section id="inicio" class="hero-panel flex items-center">
+        <img class="hero-photo" loading="lazy"
+             src="https://commons.wikimedia.org/wiki/Special:FilePath/Palacio_Nacional_de_M%C3%A9xico.jpg?width=1600"
+             alt="Fachada del Palacio Nacional de México">
+        <div class="mx-auto w-full max-w-7xl px-5 py-20 sm:px-8">
+          <div class="max-w-2xl text-white">
+            <p class="reveal mb-4 text-xs font-bold uppercase tracking-[.22em]">Mes Patrio · 2026</p>
+            <h1 class="display-font reveal text-5xl font-bold leading-[.95] sm:text-7xl">Septiembre en México</h1>
+            <p class="reveal-delay mt-6 max-w-xl text-base leading-7 text-white/95 sm:text-lg">
+              Historia, personajes y tradiciones del mes en que México celebra el inicio y la consumación de su independencia.
+            </p>
+            <div class="hero-ribbon reveal-delay mt-8 max-w-xl px-5 py-4">
+              <p class="display-font text-xl font-semibold leading-tight">
+                "1810 · Grito de Dolores &nbsp;&nbsp; 1821 · Consumación de la Independencia"
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LÍNEA DE TIEMPO -->
+      <section id="fechas" class="mx-auto max-w-6xl px-5 py-20 sm:px-8">
+        <div class="max-w-2xl">
+          <p class="section-kicker">Fechas clave</p>
+          <h2 class="display-font mt-2 text-4xl font-bold leading-none sm:text-5xl">Un mes marcado por la historia</h2>
+          <div class="ink-rule mt-5"></div>
+          <p class="mt-5 leading-7">
+            Septiembre reúne varias conmemoraciones cívicas mexicanas: desde la gesta de los Niños Héroes hasta
+            la noche en que un cura de pueblo cambió el rumbo del país.
+          </p>
+        </div>
+
+        <div class="relative mt-12 max-w-4xl">
+          <div class="timeline-line" aria-hidden="true"></div>
+
+          <article class="timeline-entry mb-7">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="rounded-sm border border-stone-200 bg-white p-5">
+              <p class="display-font text-2xl font-bold text-[#006847]">13 de septiembre</p>
+              <h3 class="display-font mt-1 font-bold">Batalla de Chapultepec</h3>
+              <p class="mt-2 leading-6">Se conmemora la defensa del Castillo de Chapultepec en 1847 y la gesta de los Niños Héroes.</p>
+            </div>
+          </article>
+
+          <article class="timeline-entry mb-7">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="rounded-sm border border-stone-200 bg-white p-5">
+              <p class="display-font text-2xl font-bold text-[#006847]">14 de septiembre</p>
+              <h3 class="display-font mt-1 font-bold">Incorporación de Chiapas</h3>
+              <p class="mt-2 leading-6">Aniversario de la anexión voluntaria de Chiapas a México, ocurrida en 1824.</p>
+            </div>
+          </article>
+
+          <article class="timeline-entry mb-7">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="rounded-sm border border-stone-200 bg-white p-5">
+              <p class="display-font text-2xl font-bold text-[#006847]">15 de septiembre</p>
+              <h3 class="display-font mt-1 font-bold">Víspera y el Grito</h3>
+              <p class="mt-2 leading-6">Por la noche, autoridades de todo el país repican campanas y dan el Grito de Independencia.</p>
+            </div>
+          </article>
+
+          <article class="timeline-entry mb-7">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="rounded-sm border border-stone-200 bg-white p-5">
+              <p class="display-font text-2xl font-bold text-[#006847]">16 de septiembre</p>
+              <h3 class="display-font mt-1 font-bold">Día de la Independencia</h3>
+              <p class="mt-2 leading-6">Fiesta nacional que recuerda el inicio de la lucha armada iniciada por Hidalgo en 1810.</p>
+            </div>
+          </article>
+
+          <article class="timeline-entry">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="rounded-sm border border-stone-200 bg-white p-5">
+              <p class="display-font text-2xl font-bold text-[#ce1126]">27 de septiembre</p>
+              <h3 class="display-font mt-1 font-bold">Consumación de la Independencia</h3>
+              <p class="mt-2 leading-6">El Ejército Trigarante entra a la Ciudad de México en 1821, sellando el fin de la guerra.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- PERSONAJES -->
+      <section id="personajes" class="bg-[#e8f0e9]">
+        <div class="mx-auto max-w-7xl px-5 py-20 sm:px-8">
+          <div class="flex flex-col justify-between gap-5 md:flex-row md:items-end">
+            <div class="max-w-2xl">
+              <p class="section-kicker">Figuras de la independencia</p>
+              <h2 class="display-font mt-2 text-4xl font-bold leading-none sm:text-5xl">Los rostros de la insurgencia</h2>
+            </div>
+            <p class="max-w-md leading-6">Tres figuras cuyas decisiones, en unas cuantas semanas de 1810, encendieron once años de guerra.</p>
+          </div>
+
+          <div class="mt-10 grid gap-7 md:grid-cols-3">
+            <article class="person-card rounded-sm">
+              <img class="person-image" loading="lazy"
+                   src="https://commons.wikimedia.org/wiki/Special:FilePath/Miguel_Hidalgo_y_Costilla.png?width=500"
+                   alt="Retrato de Miguel Hidalgo y Costilla">
+              <div class="p-6">
+                <p class="text-xs font-bold uppercase tracking-[.14em] text-[#006847]">Padre de la Patria</p>
+                <h3 class="display-font mt-2 text-xl font-bold">Miguel Hidalgo y Costilla</h3>
+                <p class="mt-3 leading-6">
+                  Sacerdote de Dolores que, la madrugada del 16 de septiembre de 1810, llamó al pueblo a levantarse
+                  en armas contra el gobierno virreinal. Es considerado el iniciador de la Independencia de México.
+                </p>
+              </div>
+            </article>
+
+            <article class="person-card red-top rounded-sm">
+              <img class="person-image" loading="lazy"
+                   src="https://commons.wikimedia.org/wiki/Special:FilePath/Mexico.JoseMariaMorelos.01.jpg?width=500"
+                   alt="Retrato de José María Morelos y Pavón">
+              <div class="p-6">
+                <p class="text-xs font-bold uppercase tracking-[.14em] text-[#ce1126]">Generalísimo insurgente</p>
+                <h3 class="display-font mt-2 text-xl font-bold">José María Morelos y Pavón</h3>
+                <p class="mt-3 leading-6">
+                  Tomó el mando del movimiento tras la muerte de Hidalgo. Redactó los "Sentimientos de la Nación"
+                  y convocó el primer Congreso de Chilpancingo en 1813.
+                </p>
+              </div>
+            </article>
+
+            <article class="person-card rounded-sm">
+              <img class="person-image" loading="lazy"
+                   src="https://commons.wikimedia.org/wiki/Special:FilePath/Josefa_Ortiz,_%C3%B3leo_sobre_tela.jpg?width=500"
+                   alt="Retrato de Josefa Ortiz de Domínguez">
+              <div class="p-6">
+                <p class="text-xs font-bold uppercase tracking-[.14em] text-[#006847]">La Corregidora</p>
+                <h3 class="display-font mt-2 text-xl font-bold">Josefa Ortiz de Domínguez</h3>
+                <p class="mt-3 leading-6">
+                  Alertó a los insurgentes de que la conspiración de Querétaro había sido descubierta,
+                  precipitando el inicio del movimiento antes de lo planeado.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- EL GRITO -->
+      <section class="relative overflow-hidden bg-[#003d2d]">
+        <img class="absolute inset-0 h-full w-full object-cover opacity-30" loading="lazy"
+             src="https://commons.wikimedia.org/wiki/Special:FilePath/Balc%C3%B3n_principal_del_Palacio_Nacional.JPG?width=1600"
+             alt="Balcón principal del Palacio Nacional, desde donde se da el Grito">
+        <div class="relative mx-auto max-w-5xl px-5 py-20 text-center text-white sm:px-8">
+          <i data-lucide="bell-ring" class="mx-auto mb-5 h-9 w-9 text-[#f5d167]" aria-hidden="true"></i>
+          <p class="text-xs font-bold uppercase tracking-[.2em]">Tradición nacional</p>
+          <h2 class="display-font mt-3 text-4xl font-bold leading-none sm:text-5xl">El Grito de Independencia</h2>
+          <p class="mx-auto mt-5 max-w-2xl leading-7 text-white/90">
+            Cada 15 de septiembre por la noche, el presidente de México sale al balcón del Palacio Nacional, toca la
+            campana original de Dolores y repite los vivas que Hidalgo pronunció en 1810. La misma escena se repite
+            en plazas de todo el país y en las principales representaciones diplomáticas de México en el mundo.
+          </p>
+        </div>
+      </section>
+
+      <!-- CURIOSIDADES -->
+      <section id="curiosidades" class="mx-auto max-w-7xl px-5 py-20 sm:px-8">
+        <div class="max-w-2xl">
+          <p class="section-kicker">Curiosidades</p>
+          <h2 class="display-font mt-2 text-4xl font-bold leading-none sm:text-5xl">Datos que pocos conocen</h2>
+          <div class="ink-rule mt-5"></div>
+        </div>
+        <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <article class="fact-card rounded-sm p-6">
+            <i data-lucide="hourglass" class="mb-5 h-7 w-7 text-[#006847]" aria-hidden="true"></i>
+            <h3 class="display-font font-bold">11 años de guerra</h3>
+            <p class="mt-3 text-sm leading-6">La guerra de independencia duró de 1810 a 1821, mucho más de lo que suele recordarse en las celebraciones.</p>
+          </article>
+          <article class="fact-card rounded-sm p-6">
+            <i data-lucide="calendar-days" class="mb-5 h-7 w-7 text-[#ce1126]" aria-hidden="true"></i>
+            <h3 class="display-font font-bold">Dos fechas, una fiesta</h3>
+            <p class="mt-3 text-sm leading-6">El 15 se celebra el Grito por la noche y el 16 es el desfile cívico-militar: son dos actos de una misma conmemoración.</p>
+          </article>
+          <article class="fact-card rounded-sm p-6">
+            <i data-lucide="music-2" class="mb-5 h-7 w-7 text-[#006847]" aria-hidden="true"></i>
+            <h3 class="display-font font-bold">Un himno posterior</h3>
+            <p class="mt-3 text-sm leading-6">El Himno Nacional Mexicano no existía en 1810: se compuso hasta 1854, más de cuatro décadas después.</p>
+          </article>
+          <article class="fact-card rounded-sm p-6">
+            <i data-lucide="landmark" class="mb-5 h-7 w-7 text-[#ce1126]" aria-hidden="true"></i>
+            <h3 class="display-font font-bold">La campana viajó</h3>
+            <p class="mt-3 text-sm leading-6">La campana de Dolores fue trasladada a la Ciudad de México y hoy corona el Palacio Nacional.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- MITOS -->
+      <section id="mitos" class="bg-[#f1eee5]">
+        <div class="mx-auto grid max-w-6xl gap-10 px-5 py-20 sm:px-8 lg:grid-cols-[.8fr_1.2fr]">
+          <div>
+            <p class="section-kicker">Mitos y realidades</p>
+            <h2 class="display-font mt-2 text-4xl font-bold leading-none sm:text-5xl">Lo que la tradición mezcló con la historia</h2>
+            <div class="ink-rule mt-5"></div>
+            <p class="mt-5 leading-7">Con el paso de los años, algunos detalles se simplificaron o se romantizaron. Aquí, la versión que sí respaldan los historiadores.</p>
+          </div>
+          <div class="overflow-hidden rounded-sm border border-stone-300">
+            <details open>
+              <summary class="flex items-center justify-between gap-5 px-6 py-5">
+                <span class="display-font font-bold">El Grito se da la noche del 16 de septiembre.</span>
+              </summary>
+              <div class="px-6 pb-6">
+                <p class="text-xs font-bold uppercase tracking-[.14em] text-[#006847]">Realidad</p>
+                <p class="mt-2 leading-6">En realidad se realiza la noche del 15, en vísperas del aniversario.</p>
+              </div>
+            </details>
+            <details>
+              <summary class="flex items-center justify-between gap-5 px-6 py-5">
+                <span class="display-font font-bold">Hidalgo gritó exactamente "¡Viva México!".</span>
+              </summary>
+              <div class="px-6 pb-6">
+                <p class="text-xs font-bold uppercase tracking-[.14em] text-[#006847]">Realidad</p>
+                <p class="mt-2 leading-6">No existe una versión escrita de sus palabras; se sabe que vitoreó a la religión, a América y contra el mal gobierno.</p>
+              </div>
+            </details>
+            <details>
+              <summary class="flex items-center justify-between gap-5 px-6 py-5">
+                <span class="display-font font-bold">México se independizó en 1810.</span>
+              </summary>
+              <div class="px-6 pb-6">
+                <p class="text-xs font-bold uppercase tracking-[.14em] text-[#006847]">Realidad</p>
+                <p class="mt-2 leading-6">1810 marca el inicio de la lucha armada; la independencia se consumó hasta 1821.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-[#003d2d] px-5 py-9 text-center sm:px-8">
+      <p class="display-font text-lg text-white">¡Viva México! · Mes Patrio, Septiembre</p>
+      <p class="display-font text-lg text-white"> Kevin Raúl Gonzalez Chavez</p>
+      <p class="display-font text-lg text-white">23308051280594-5-i-programacion</p>
+    </footer>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
