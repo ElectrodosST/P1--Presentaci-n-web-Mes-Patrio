@@ -7,7 +7,6 @@
 
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <style>
-
 html {
   scroll-behavior: smooth;
 }
@@ -19,12 +18,10 @@ body {
   margin: 0;
 }
 
-
 .franja {
   height: 6px;
   background: linear-gradient(to right, #006847 0 33%, #ffffff 33% 66%, #ce1126 66% 100%);
 }
-
 
 .card-personaje {
   background: white;
@@ -40,17 +37,22 @@ body {
   border-top-color: #ce1126;
 }
 
-
 details {
   background: white;
-  border-bottom: 1px solid #ccc;
-  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: all 0.2s ease;
 }
+
 summary {
   font-weight: bold;
   cursor: pointer;
+  list-style: none;
 }
 
+summary::-webkit-details-marker {
+  display: none;
+}
 
 .hero {
   position: relative;
@@ -61,7 +63,6 @@ summary {
   min-height: 450px;
 }
 
-
 .activo {
   color: #ce1126;
 }
@@ -69,7 +70,7 @@ summary {
 </head>
 <body>
 
-  <!-- ===================== MENU DE NAVEGACION ===================== -->
+  <!-- Menu de navegacion principal -->
   <header class="sticky top-0 z-10 bg-white border-b border-gray-200">
     <nav class="max-w-6xl mx-auto flex justify-between items-center p-4">
       <a href="index.html" class="text-xl font-bold text-[#006847]">Mes Patrio 🇲🇽</a>
@@ -84,53 +85,122 @@ summary {
     </nav>
   </header>
 
+  <!-- Seccion de contenido: Fechas patrias -->
   <main>
     <section class="max-w-4xl mx-auto py-12 px-4">
       <h2 class="text-3xl font-bold text-[#006847]">Fechas Importantes</h2>
       <div class="w-16 h-1 bg-[#ce1126] my-2"></div>
-      <p class="text-gray-600 mb-8">Eventos clave que celebramos durante este mes:</p>
+      <p class="text-gray-600 mb-8">Haz clic en cualquier fecha para desplegar la historia completa y sus datos clave:</p>
 
       <div class="space-y-4">
-        <div class="bg-white p-4 border-l-4 border-[#006847] shadow-sm rounded">
-          <span class="text-lg font-bold text-[#006847]">13 de septiembre</span>
-          <h3 class="font-bold text-base">Niños Héroes</h3>
-          <p class="text-sm text-gray-600">Conmemoración de la defensa del Castillo de Chapultepec en 1847, durante la invasión estadounidense.</p>
-        </div>
 
-        <div class="bg-white p-4 border-l-4 border-[#006847] shadow-sm rounded">
-          <span class="text-lg font-bold text-[#006847]">14 de septiembre</span>
-          <h3 class="font-bold text-base">Anexión de Chiapas</h3>
-          <p class="text-sm text-gray-600">Fecha en que Chiapas se unió formalmente a México en 1824, tras votar su población a favor.</p>
-        </div>
+        <!-- 13 de Septiembre -->
+        <details class="border-l-4 border-[#006847]">
+          <summary class="p-4 flex justify-between items-center hover:bg-gray-50 rounded">
+            <div>
+              <span class="text-lg font-bold text-[#006847]">13 de septiembre</span>
+              <h3 class="font-bold text-base text-gray-800">Batalla de Chapultepec (Niños Héroes)</h3>
+            </div>
+            <span class="text-xs bg-[#006847] text-white px-2 py-1 rounded">Ver detalles 👇</span>
+          </summary>
+          <div class="p-4 pt-0 border-t border-gray-100 text-sm text-gray-700 space-y-3 mt-2">
+            <p><strong>Antecedentes del conflicto:</strong> En 1847, México enfrentaba la Intervención Estadounidense. El ejército invasor avanzó desde Veracruz hasta la capital con el objetivo de tomar la Ciudad de México y forzar la pérdida de territorio.</p>
+            <p><strong>El combate en el cerro:</strong> El Castillo de Chapultepec funcionaba como el Colegio Militar. Bajo el mando del general Nicolás Bravo, apenas unos 800 soldados y un puñado de jóvenes cadetes intentaron resistir el bombardeo y el asalto de miles de soldados enemigos.</p>
+            <p><strong>Los 6 Cadetes:</strong> Se honra especialmente a Juan de la Barrera, Agustín Melgar, Francisco Márquez, Fernando Montes de Oca, Vicente Suárez y Juan Escutia. Todos tenían entre 13 y 20 años de edad.</p>
+            <p><strong>Mito vs. Historia:</strong> La leyenda de Juan Escutia arrojándose con la bandera sirvió para construir un símbolo de identidad y honor patrio frente a la derrota militar. Hoy en día, el Castillo es el Museo Nacional de Historia y alberga el Altar a la Patria.</p>
+          </div>
+        </details>
 
-        <div class="bg-white p-4 border-l-4 border-[#006847] shadow-sm rounded">
-          <span class="text-lg font-bold text-[#006847]">15 de septiembre</span>
-          <h3 class="font-bold text-base">El Grito de Independencia</h3>
-          <p class="text-sm text-gray-600">En la noche se da el tradicional Grito recordando el llamado a las armas de Hidalgo.</p>
-        </div>
+        <!-- 14 de Septiembre -->
+        <details class="border-l-4 border-[#006847]">
+          <summary class="p-4 flex justify-between items-center hover:bg-gray-50 rounded">
+            <div>
+              <span class="text-lg font-bold text-[#006847]">14 de septiembre</span>
+              <h3 class="font-bold text-base text-gray-800">Incorporación de Chiapas a la Federación Mexicana</h3>
+            </div>
+            <span class="text-xs bg-[#006847] text-white px-2 py-1 rounded">Ver detalles 👇</span>
+          </summary>
+          <div class="p-4 pt-0 border-t border-gray-100 text-sm text-gray-700 space-y-3 mt-2">
+            <p><strong>Contexto territorial:</strong> Durante el periodo colonial, la provincia de Chiapas pertenecía a la Capitanía General de Guatemala y no al Virreinato de la Nueva España.</p>
+            <p><strong>El dilema independentista:</strong> Al independizarse España en 1821, Chiapas quedó en una encrucijada: unirse a las Provincias Unidas del Centro de América o integrarse al recién creado imperio de México.</p>
+            <p><strong>La votación popular (Plebiscito):</strong> En lugar de una decisión impuesta, las autoridades locales organizaron un plebiscito en 1824. Con 96,829 votos a favor de la unión con México contra 60,400 a favor de Guatemala, se formalizó la anexión.</p>
+            <p><strong>Trascendencia:</strong> Es un caso único en la historia nacional, ya que Chiapas es el único estado que decidió formar parte de México a través de un ejercicio democrático y voluntario.</p>
+          </div>
+        </details>
 
-        <div class="bg-white p-4 border-l-4 border-[#006847] shadow-sm rounded">
-          <span class="text-lg font-bold text-[#006847]">16 de septiembre</span>
-          <h3 class="font-bold text-base">Inicio de la Independencia</h3>
-          <p class="text-sm text-gray-600">Día oficial del inicio de la lucha de 1810. Se realiza el desfile militar por las calles de la capital.</p>
-        </div>
+        <!-- 15 de Septiembre -->
+        <details class="border-l-4 border-[#006847]">
+          <summary class="p-4 flex justify-between items-center hover:bg-gray-50 rounded">
+            <div>
+              <span class="text-lg font-bold text-[#006847]">15 de septiembre</span>
+              <h3 class="font-bold text-base text-gray-800">Conmemoración del Grito de Dolores</h3>
+            </div>
+            <span class="text-xs bg-[#006847] text-white px-2 py-1 rounded">Ver detalles 👇</span>
+          </summary>
+          <div class="p-4 pt-0 border-t border-gray-100 text-sm text-gray-700 space-y-3 mt-2">
+            <p><strong>Origen de la verbena:</strong> Aunque el llamado a las armas ocurrió en la madrugada del 16 de septiembre de 1810, los festejos oficiales comienzan la noche del 15. Esto permite que el pueblo se reúna en las plazas públicas a celebrar en vísperas del día oficial.</p>
+            <p><strong>El cambio de horario por Porfirio Díaz:</strong> Existe el dato histórico de que el presidente Porfirio Díaz impulsó mover la ceremonia oficial a las 11:00 PM del 15 de septiembre para hacerla coincidir con su cumpleaños (15 de septiembre de 1830), fijando la costumbre moderna.</p>
+            <p><strong>La Ceremonia Oficial:</strong> Desde el balcón central de Palacio Nacional, el Presidente ondea la Bandera Nacional, repica la campana original trajina desde Dolores e invoca los nombres de los héroes de la patria cerrando con el tradicional ¡Viva México!</p>
+            <p><strong>Simbolismo:</strong> Es la fiesta cultural y gastronómica más importante del país, donde el pozole, los chiles en nogada y la música de mariachi representan la riqueza de la identidad mexicana.</p>
+          </div>
+        </details>
 
-        <div class="bg-white p-4 border-l-4 border-gray-400 shadow-sm rounded">
-          <span class="text-lg font-bold text-gray-500">17 de septiembre</span>
-          <h3 class="font-bold text-base">Instalación del Congreso de Chilpancingo</h3>
-          <p class="text-sm text-gray-600">En 1813 Morelos convocó este congreso, donde se redactó el "Acta de Independencia".</p>
-        </div>
+        <!-- 16 de Septiembre -->
+        <details class="border-l-4 border-[#006847]">
+          <summary class="p-4 flex justify-between items-center hover:bg-gray-50 rounded">
+            <div>
+              <span class="text-lg font-bold text-[#006847]">16 de septiembre</span>
+              <h3 class="font-bold text-base text-gray-800">Inicio de la Lucha por la Independencia (1810)</h3>
+            </div>
+            <span class="text-xs bg-[#006847] text-white px-2 py-1 rounded">Ver detalles 👇</span>
+          </summary>
+          <div class="p-4 pt-0 border-t border-gray-100 text-sm text-gray-700 space-y-3 mt-2">
+            <p><strong>La Conspiración descubierta:</strong> El plan original organizado en Querétaro por Miguel Hidalgo, Ignacio Allende, Juan Aldama y Josefa Ortiz de Domínguez planeaba levantarse en armas a inicios de octubre de 1810, pero fueron delatados ante el gobierno virreinal.</p>
+            <p><strong>El llamado a las armas:</strong> Al ser avisado por Doña Josefa Ortiz, el cura Hidalgo decidió adelantar las acciones. Tocó las campanas de su parroquia en Dolores, Guanajuato, reuniendo a campesinos, indígenas y trabajadores para rebelarse contra el mal gobierno español.</p>
+            <p><strong>Evolución del conflicto:</strong> Lo que inició como una protesta popular improvisada armada con machetes y palos se convirtió en una guerra campal de 11 años dividida en cuatro etapas principales: Inicio, Organización, Resistencia y Consumación.</p>
+            <p><strong>El Desfile Militar:</strong> Cada 16 de septiembre se realiza el tradicional desfile de las Fuerzas Armadas en la Ciudad de México para rendir honores a la soberanía del país.</p>
+          </div>
+        </details>
 
-        <div class="bg-white p-4 border-l-4 border-[#ce1126] shadow-sm rounded">
-          <span class="text-lg font-bold text-[#ce1126]">27 de septiembre</span>
-          <h3 class="font-bold text-base">Consumación de la Independencia</h3>
-          <p class="text-sm text-gray-600">Entrada del Ejército Trigarante a la Ciudad de México en 1821, encabezado por Iturbide.</p>
-        </div>
+        <!-- 17 de Septiembre -->
+        <details class="border-l-4 border-gray-400">
+          <summary class="p-4 flex justify-between items-center hover:bg-gray-50 rounded">
+            <div>
+              <span class="text-lg font-bold text-gray-500">17 de septiembre</span>
+              <h3 class="font-bold text-base text-gray-800">Instalación del Congreso de Chilpancingo (1813)</h3>
+            </div>
+            <span class="text-xs bg-gray-500 text-white px-2 py-1 rounded">Ver detalles 👇</span>
+          </summary>
+          <div class="p-4 pt-0 border-t border-gray-100 text-sm text-gray-700 space-y-3 mt-2">
+            <p><strong>El liderazgo de Morelos:</strong> Tras la muerte de Hidalgo en 1811, José María Morelos y Pavón asumió la conducción militar y política de la causa insurgente en el sur del país.</p>
+            <p><strong>Creación del Primer Congreso:</strong> El 14 de septiembre de 1813 se instaló en Chilpancingo, Guerrero, la primera asamblea legislativa independiente de México, conocida formalmente como el Congreso del Anáhuac.</p>
+            <p><strong>Sentimientos de la Nación:</strong> El 14 de septiembre Morelos presentó este documento histórico, discutido a fondo por los congresistas en los días posteriores. Proponía la abolición definitiva de la esclavitud, la eliminación de las castas, la igualdad ante la ley y la división de poderes.</p>
+            <p><strong>Impacto Constitucional:</strong> De este congreso nació en 1814 la Constitución de Apatzingán, considerada el primer antecedente constitucional de la República Mexicana.</p>
+          </div>
+        </details>
+
+        <!-- 27 de Septiembre -->
+        <details class="border-l-4 border-[#ce1126]">
+          <summary class="p-4 flex justify-between items-center hover:bg-gray-50 rounded">
+            <div>
+              <span class="text-lg font-bold text-[#ce1126]">27 de septiembre</span>
+              <h3 class="font-bold text-base text-gray-800">Consumación de la Independencia (1821)</h3>
+            </div>
+            <span class="text-xs bg-[#ce1126] text-white px-2 py-1 rounded">Ver detalles 👇</span>
+          </summary>
+          <div class="p-4 pt-0 border-t border-gray-100 text-sm text-gray-700 space-y-3 mt-2">
+            <p><strong>El Abrazo de Acatempan:</strong> Tras años de desgaste militar, Agustín de Iturbide (líder del ejército realista) y Vicente Guerrero (líder de la guerrilla insurgente) decidieron pactar la paz para lograr la libertad del país.</p>
+            <p><strong>El Plan de Iguala y el Ejército Trigarante:</strong> Ambos ejércitos se unieron bajo una misma bandera para formar el "Ejército de las Tres Garantías": Religión, Independencia y Unión.</p>
+            <p><strong>La Entrada Triunfal:</strong> El 27 de septiembre de 1821, el Ejército Trigarante entró victorioso a la Ciudad de México entre vítores del pueblo, concluyendo oficialmente 11 años de sangrienta guerra revolucionaria.</p>
+            <p><strong>Firma del Acta:</strong> Al día siguiente, 28 de septiembre, se instaló la Junta Provisional Gubernativa y se firmó el Acta de Independencia del Imperio Mexicano, naciendo legalmente México como una nación soberana.</p>
+          </div>
+        </details>
+
       </div>
     </section>
   </main>
 
-  <!-- ===================== PIE DE PAGINA ===================== -->
+  <!-- Pie de pagina -->
   <footer class="bg-[#004d35] text-white text-center py-6">
     <p class="font-bold">¡Viva México! - Mes Patrio</p>
     <p class="text-xs text-gray-300 mt-1">Kevin Raúl González Chávez</p>
