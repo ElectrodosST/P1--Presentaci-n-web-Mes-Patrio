@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mitos Comunes - Mes Patrio</title>
+
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <style>
+/* estilos generales de todo el proyecto */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f4ed;
+  color: #222;
+  margin: 0;
+}
+
+/* franja tricolor que se usa como separador */
+.franja {
+  height: 6px;
+  background: linear-gradient(to right, #006847 0 33%, #ffffff 33% 66%, #ce1126 66% 100%);
+}
+
+/* tarjetas de los personajes historicos */
+.card-personaje {
+  background: white;
+  border-top: 5px solid #006847;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+.card-personaje:hover {
+  transform: translateY(-5px);
+}
+.card-roja {
+  border-top-color: #ce1126;
+}
+
+/* acordeon de la seccion de mitos */
+details {
+  background: white;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+}
+summary {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* el header grande de la portada */
+.hero {
+  position: relative;
+  background-image: linear-gradient(rgba(0, 77, 53, 0.8), rgba(0, 77, 53, 0.8)),
+                    url('https://commons.wikimedia.org/wiki/Special:FilePath/Palacio_Nacional_de_M%C3%A9xico.jpg?width=1600');
+  background-size: cover;
+  background-position: center;
+  min-height: 450px;
+}
+
+/* para que se note en que pagina estoy parado dentro del menu */
+.activo {
+  color: #ce1126;
+}
+  </style>
+</head>
+<body>
+
+  <!-- ===================== MENU DE NAVEGACION ===================== -->
+  <header class="sticky top-0 z-10 bg-white border-b border-gray-200">
+    <nav class="max-w-6xl mx-auto flex justify-between items-center p-4">
+      <a href="index.html" class="text-xl font-bold text-[#006847]">Mes Patrio 🇲🇽</a>
+      <div class="space-x-4 text-sm font-semibold">
+        <a href="index.html" class="hover:text-[#ce1126]">Inicio</a>
+        <a href="fechas.html" class="hover:text-[#ce1126]">Fechas</a>
+        <a href="personajes.html" class="hover:text-[#ce1126]">Personajes</a>
+        <a href="simbolos.html" class="hover:text-[#ce1126]">Símbolos</a>
+        <a href="datos.html" class="hover:text-[#ce1126]">Datos</a>
+        <a href="mitos.html" class="bg-[#006847] text-white px-3 py-1.5 rounded-full">Mitos</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===================== SECCION DE MITOS / PREGUNTAS ===================== -->
+  <main>
+    <section class="max-w-3xl mx-auto py-12 px-4">
+      <h2 class="text-3xl font-bold text-[#006847]">Mitos comunes</h2>
+      <p class="text-gray-600 mb-6">Cosas que a veces confundimos sobre la historia:</p>
+
+      <div class="space-y-2">
+        <details>
+          <summary>¿El Grito fue la noche del 16?</summary>
+          <p class="text-sm text-gray-700 mt-2">Realidad: Fue la madrugada del 16, pero tradicionalmente se celebra la noche del 15 de septiembre.</p>
+        </details>
+
+        <details>
+          <summary>¿Hidalgo dijo exactamente "¡Viva México!"?</summary>
+          <p class="text-sm text-gray-700 mt-2">Realidad: No hay un registro exacto de sus palabras, pero se sabe que vitoreó a la religión y a la América.</p>
+        </details>
+
+        <details>
+          <summary>¿México fue libre inmediatamente en 1810?</summary>
+          <p class="text-sm text-gray-700 mt-2">Realidad: No, 1810 fue solo el inicio. Pasaron 11 años de guerra para lograr la independencia en 1821.</p>
+        </details>
+
+        <details>
+          <summary>¿Hidalgo e Iturbide lucharon juntos desde el principio?</summary>
+          <p class="text-sm text-gray-700 mt-2">Realidad: Iturbide combatió primero contra los insurgentes y se unió a la causa hasta 1821, con el Plan de Iguala.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== PIE DE PAGINA ===================== -->
+  <footer class="bg-[#004d35] text-white text-center py-6">
+    <p class="font-bold">¡Viva México! - Mes Patrio</p>
+    <p class="text-xs text-gray-300 mt-1">Kevin Raúl González Chávez</p>
+    <p class="text-xs text-gray-400">23308051280594 - 5º I Programación</p>
+  </footer>
+
+</body>
+</html>
