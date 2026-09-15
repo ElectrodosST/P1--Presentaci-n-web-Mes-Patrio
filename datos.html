@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Símbolos Patrios - Mes Patrio</title>
+  <title>Datos Curiosos - Mes Patrio</title>
 
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js"></script>
   <style>
 html {
   scroll-behavior: smooth;
@@ -68,7 +69,7 @@ summary::-webkit-details-marker {
 }
   </style>
 </head>
-<body>
+<body class="min-h-screen flex flex-col justify-between">
 
   <!-- Menu de navegacion principal -->
   <header class="sticky top-0 z-10 bg-white border-b border-gray-200">
@@ -78,78 +79,156 @@ summary::-webkit-details-marker {
         <a href="index.html" class="hover:text-[#ce1126]">Inicio</a>
         <a href="fechas.html" class="hover:text-[#ce1126]">Fechas</a>
         <a href="personajes.html" class="hover:text-[#ce1126]">Personajes</a>
-        <a href="simbolos.html" class="activo">Símbolos</a>
-        <a href="datos.html" class="hover:text-[#ce1126]">Datos</a>
+        <a href="simbolos.html" class="hover:text-[#ce1126]">Símbolos</a>
+        <a href="datos.html" class="activo">Datos</a>
         <a href="mitos.html" class="bg-[#006847] text-white px-3 py-1.5 rounded-full hover:bg-green-800">Mitos</a>
       </div>
     </nav>
   </header>
 
-  <!-- Seccion de contenido: Simbolos patrios -->
-  <main>
-    <section class="max-w-5xl mx-auto py-12 px-4">
-      <h2 class="text-3xl font-bold text-[#006847]">Símbolos Patrios</h2>
+  <!-- Seccion de datos curiosos con desplegables -->
+  <main class="flex-grow">
+    <section class="max-w-4xl mx-auto py-12 px-4">
+      <h2 class="text-3xl font-bold text-[#006847]">Datos Curiosos e Históricos</h2>
       <div class="w-16 h-1 bg-[#ce1126] my-2"></div>
-      <p class="text-gray-600 mb-8">Haz clic en cada símbolo para desplegar la información histórica detallada:</p>
+      <p class="text-gray-600 mb-8">Haz clic en cualquier dato para desplegar la explicación detallada:</p>
 
       <div class="space-y-4">
 
-        <!-- La Bandera Nacional -->
+        <!-- Dato 1 -->
         <details class="border-l-4 border-[#006847]">
           <summary class="p-4 flex justify-between items-center hover:bg-gray-50 rounded">
-            <div>
-              <span class="text-lg font-bold text-[#006847]">La Bandera Nacional</span>
-              <h3 class="font-bold text-base text-gray-800">Historia y significado de los colores patrios</h3>
+            <div class="flex items-center gap-3">
+              <i data-lucide="clock" class="text-[#006847]"></i>
+              <div>
+                <h3 class="font-bold text-base text-gray-800">Duración del conflicto: 11 años de guerra</h3>
+              </div>
             </div>
             <span class="text-xs bg-[#006847] text-white px-2 py-1 rounded">Ver detalles</span>
           </summary>
-          <div class="p-4 pt-0 border-t border-gray-100 text-sm text-gray-700 space-y-3 mt-2">
-            <p><strong>Origen del diseño:</strong> La primera bandera tricolor fue diseñada en 1821 por el Ejercito Trigarante tras la firma del Plan de Iguala. Tenia franjas diagonales y representaba la union de las fuerzas insurgentes y realistas.</p>
-            <p><strong>Significado de los colores:</strong> En 1821, el verde representaba la Independencia, el blanco la fe Catolica y el rojo la Union entre europeos y americanos. Tras la secularizacion promovida por Benito Juarez en el siglo XIX, se redefinieron los significados oficiales:</p>
-            <ul class="list-disc pl-5 space-y-1">
-              <li><strong>Verde:</strong> La esperanza de la nacion en la construccion de su futuro.</li>
-              <li><strong>Blanco:</strong> La unidad de los mexicanos y la pureza de sus ideales.</li>
-              <li><strong>Rojo:</strong> La sangre derramada por los heroes que dieron su vida por la patria.</li>
-            </ul>
-            <p><strong>Dato legal:</strong> La bandera actual fue adoptada oficialmente el 16 de septiembre de 1968 durante el gobierno de Gustavo Diaz Ordaz y confirmada por ley en 1984. Su proporcion oficial es de cuatro a siete entre ancho y largo.</p>
+          <div class="p-4 pt-0 border-t border-gray-100 text-sm text-gray-700 space-y-2 mt-2">
+            <p><strong>Desarrollo histórico:</strong> La lucha armada inició formalmente el 16 de septiembre de 1810 con el Grito de Dolores dado por Miguel Hidalgo y concluyó el 27 de septiembre de 1821 con la entrada triunfal del Ejército Trigarante a la Ciudad de México.</p>
+            <p><strong>Cuatro etapas del conflicto:</strong> Durante este largo periodo la guerra atravesó cuatro fases bien definidas: Inicio (liderada por Hidalgo y Allende), Organización (dirigida por Morelos), Resistencia (encabezada por Vicente Guerrero y Francisco Xavier Mina) y Consumación (pactada entre Iturbide y Guerrero).</p>
           </div>
         </details>
 
-        <!-- El Escudo Nacional -->
+        <!-- Dato 2 -->
         <details class="border-l-4 border-[#006847]">
           <summary class="p-4 flex justify-between items-center hover:bg-gray-50 rounded">
-            <div>
-              <span class="text-lg font-bold text-[#006847]">El Escudo Nacional</span>
-              <h3 class="font-bold text-base text-gray-800">El mito mexica del aguila y la serpiente</h3>
+            <div class="flex items-center gap-3">
+              <i data-lucide="calendar" class="text-[#006847]"></i>
+              <div>
+                <h3 class="font-bold text-base text-gray-800">Dos días de festejos oficiales</h3>
+              </div>
             </div>
             <span class="text-xs bg-[#006847] text-white px-2 py-1 rounded">Ver detalles</span>
           </summary>
-          <div class="p-4 pt-0 border-t border-gray-100 text-sm text-gray-700 space-y-3 mt-2">
-            <p><strong>Leyenda de fundacion:</strong> Esta basado en el mito mexica recopilado en la tira de la peregrinacion. El dios Huitzilopochtli ordeno al pueblo azteca fundar Mexico-Tenochtitlan donde encontraran un aguila posada sobre un nopal devorando una serpiente.</p>
-            <p><strong>Simbolismo de sus elementos:</strong></p>
-            <ul class="list-disc pl-5 space-y-1">
-              <li><strong>El Aguila Real:</strong> Representa la fuerza del sol, el poder y la majestad. A diferencia de las versiones coloniales, se muestra de perfil izquierdo.</li>
-              <li><strong>La Serpiente de Cascabel:</strong> Simboliza a los enemigos vencidos y las fuerzas de la tierra.</li>
-              <li><strong>El Nopal y las Tunas:</strong> Nace sobre una pena que emerge de la laguna de Texcoco. Las tunas rojas representan los corazones sacrificados.</li>
-              <li><strong>Ramas de Encino y Laurel:</strong> En la base, la encina simboliza la fuerza republicana y el laurel representa la victoria y la gloria.</li>
-            </ul>
-            <p><strong>Diseño oficial actual:</strong> El diseño grafico moderno fue realizado por los artistas Francisco Eppens Helguera y Pedro Moctezuma Diaz Infante en 1968.</p>
+          <div class="p-4 pt-0 border-t border-gray-100 text-sm text-gray-700 space-y-2 mt-2">
+            <p><strong>El trasfondo de la celebración:</strong> La conmemoración de la Independencia se divide en dos actos oficiales de distinta naturaleza institucional:</p>
+            <p><strong>Noche del 15 de septiembre:</strong> Se efectúa la ceremonia cívica y popular del Grito en los balcones gubernamentales de todo el país, acompañada de actividades culturales, fuegos artificiales y verbenas populares.</p>
+            <p><strong>Día 16 de septiembre:</strong> Es el día festivo nacional oficial en el que se rinde homenaje a las Fuerzas Armadas mediante un desfile militar solemne en la capital y desfiles cívicos en diversos municipios.</p>
           </div>
         </details>
 
-        <!-- El Himno Nacional -->
+        <!-- Dato 3 -->
         <details class="border-l-4 border-[#ce1126]">
           <summary class="p-4 flex justify-between items-center hover:bg-gray-50 rounded">
-            <div>
-              <span class="text-lg font-bold text-[#ce1126]">El Himno Nacional Mexicano</span>
-              <h3 class="font-bold text-base text-gray-800">Creacion, musica y estrofas oficiales</h3>
+            <div class="flex items-center gap-3">
+              <i data-lucide="music" class="text-[#ce1126]"></i>
+              <div>
+                <h3 class="font-bold text-base text-gray-800">El Himno Nacional fue creado cuatro décadas después</h3>
+              </div>
             </div>
             <span class="text-xs bg-[#ce1126] text-white px-2 py-1 rounded">Ver detalles</span>
           </summary>
-          <div class="p-4 pt-0 border-t border-gray-100 text-sm text-gray-700 space-y-3 mt-2">
-            <p><strong>El concurso de 1853:</strong> Fue convocado por el presidente Antonio Lopez de Santa Anna para dotar a la patria de un canto identitario. El poeta potosino Francisco Gonzalez Bocanegra gano el concurso de la letra, impulsado segun la tradicion por su prometida Guadalupe Gonzalez del Pino, quien lo encerro en una habitacion para que escribiera el poema.</p>
-            <p><strong>La Musica:</strong> La composicion musical elegida al año siguiente fue la del musico espanol Jaime Nuno Roca, realizada en 1854. Se interpreto por primera vez el 15 de septiembre de 1854 en el Teatro Santa Anna (despues Teatro Nacional).</p>
-            <p><strong>Estructura y regulacion:</strong> El poema original contenia 10 estrofas. En la actualidad, la Ley sobre el Escudo, la Bandera y el Himno Nacionales establece que la version oficial recortada consta del coro y solo 4 estrofas (I, V, VI y X), omitiendo las mencionadas a Santa Anna e Iturbide.</p>
+          <div class="p-4 pt-0 border-t border-gray-100 text-sm text-gray-700 space-y-2 mt-2">
+            <p><strong>Sin himno propio:</strong> Durante los 11 años de guerra independentista y los primeros años de la república, México no contaba con una composición musical patriótica oficial.</p>
+            <p><strong>El concurso de 1853:</strong> Fue hasta 1853 cuando el gobierno convocó a un certamen nacional para elegir la letra y la música. La lírica de Francisco González Bocanegra y la música del compositor español Jaime Nunó se estrenaron oficialmente el 15 de septiembre de 1854 en el Teatro Santa Anna de la Ciudad de México.</p>
+          </div>
+        </details>
+
+        <!-- Dato 4 -->
+        <details class="border-l-4 border-[#ce1126]">
+          <summary class="p-4 flex justify-between items-center hover:bg-gray-50 rounded">
+            <div class="flex items-center gap-3">
+              <i data-lucide="map-pin" class="text-[#ce1126]"></i>
+              <div>
+                <h3 class="font-bold text-base text-gray-800">La Campana original de Dolores</h3>
+              </div>
+            </div>
+            <span class="text-xs bg-[#ce1126] text-white px-2 py-1 rounded">Ver detalles</span>
+          </summary>
+          <div class="p-4 pt-0 border-t border-gray-100 text-sm text-gray-700 space-y-2 mt-2">
+            <p><strong>Ubicación y traslado:</strong> La reliquia conocida como "Esquilón San José" fue la campana parroquial que Miguel Hidalgo hizo sonar la madrugada de 1810 en Dolores Hidalgo, Guanajuato.</p>
+            <p><strong>Ubicación actual:</strong> En 1896, por ordenes del presidente Porfirio Díaz, la campana fue trasladada desde Guanajuato hasta la Ciudad de México para ser colocada encima del balcón central de Palacio Nacional, donde permanece hasta la fecha y es repicada cada 15 de septiembre.</p>
+          </div>
+        </details>
+
+        <!-- Dato 5 -->
+        <details class="border-l-4 border-[#006847]">
+          <summary class="p-4 flex justify-between items-center hover:bg-gray-50 rounded">
+            <div class="flex items-center gap-3">
+              <i data-lucide="utensils" class="text-[#006847]"></i>
+              <div>
+                <h3 class="font-bold text-base text-gray-800">Origen de los Chiles en Nogada</h3>
+              </div>
+            </div>
+            <span class="text-xs bg-[#006847] text-white px-2 py-1 rounded">Ver detalles</span>
+          </summary>
+          <div class="p-4 pt-0 border-t border-gray-100 text-sm text-gray-700 space-y-2 mt-2">
+            <p><strong>Tradición gastronómica:</strong> Cuenta la crónica histórica que las monjas agustinas del convento de Santa Mónica, en Puebla, crearon este platillo en agosto de 1821 para agasajar a Agustín de Iturbide tras la firma de los Tratados de Córdoba.</p>
+            <p><strong>Simbolismo cromático:</strong> El platillo fue preparado utilizando ingredientes de temporada que recreaban exactamente los colores de la bandera del Ejército Trigarante: el verde del chile poblano y el perejil, el blanco de la salsa de nogada hecha con nuez de Castilla, y el rojo de los granos de granada.</p>
+          </div>
+        </details>
+
+        <!-- Dato 6 -->
+        <details class="border-l-4 border-[#006847]">
+          <summary class="p-4 flex justify-between items-center hover:bg-gray-50 rounded">
+            <div class="flex items-center gap-3">
+              <i data-lucide="scroll-text" class="text-[#006847]"></i>
+              <div>
+                <h3 class="font-bold text-base text-gray-800">El Plan de Iguala y las Tres Garantías</h3>
+              </div>
+            </div>
+            <span class="text-xs bg-[#006847] text-white px-2 py-1 rounded">Ver detalles</span>
+          </summary>
+          <div class="p-4 pt-0 border-t border-gray-100 text-sm text-gray-700 space-y-2 mt-2">
+            <p><strong>Documento pacificador:</strong> Proclamado el 24 de febrero de 1821 en la ciudad de Iguala, Guerrero, fue el acuerdo político que logró conciliar a las fuerzas realistas de Agustín de Iturbide con las insurgentes de Vicente Guerrero.</p>
+            <p><strong>Fundamento ideológico:</strong> Estableció los tres principios rectores de la nueva nación: la defensa de la fe católica, la total independencia de España y la unión entre todos los habitantes de la Nueva España sin distinción de origen.</p>
+          </div>
+        </details>
+
+        <!-- Dato 7 -->
+        <details class="border-l-4 border-[#ce1126]">
+          <summary class="p-4 flex justify-between items-center hover:bg-gray-50 rounded">
+            <div class="flex items-center gap-3">
+              <i data-lucide="landmark" class="text-[#ce1126]"></i>
+              <div>
+                <h3 class="font-bold text-base text-gray-800">El primer Grito oficial en Palacio Nacional</h3>
+              </div>
+            </div>
+            <span class="text-xs bg-[#ce1126] text-white px-2 py-1 rounded">Ver detalles</span>
+          </summary>
+          <div class="p-4 pt-0 border-t border-gray-100 text-sm text-gray-700 space-y-2 mt-2">
+            <p><strong>Institucionalización de la fiesta:</strong> En 1824, el primer presidente constitucional de México, Guadalupe Victoria, institucionalizó de manera oficial la conmemoración del Grito de Dolores en la capital del país.</p>
+            <p><strong>Evolución:</strong> Las primeras conmemoraciones consistían en salvas de artillería, discursos patrióticos en el campo de la Alameda Central y celebraciones comunitarias organizadas por las autoridades de la naciente República Mexicana.</p>
+          </div>
+        </details>
+
+        <!-- Dato 8 -->
+        <details class="border-l-4 border-[#ce1126]">
+          <summary class="p-4 flex justify-between items-center hover:bg-gray-50 rounded">
+            <div class="flex items-center gap-3">
+              <i data-lucide="flag" class="text-[#ce1126]"></i>
+              <div>
+                <h3 class="font-bold text-base text-gray-800">Evolución del Escudo en la Bandera Nacional</h3>
+              </div>
+            </div>
+            <span class="text-xs bg-[#ce1126] text-white px-2 py-1 rounded">Ver detalles</span>
+          </summary>
+          <div class="p-4 pt-0 border-t border-gray-100 text-sm text-gray-700 space-y-2 mt-2">
+            <p><strong>Múltiples transformaciones:</strong> El diseño del águila sobre la Bandera ha cambiado constantemente según la etapa política de México: desde el águila coronada del Imperio de Iturbide, pasando por las versiones republicanas del siglo XIX, hasta el diseño imperial de Maximiliano.</p>
+            <p><strong>Diseño oficial definitivo:</strong> El modelo actual que conocemos en la actualidad fue oficializado por el presidente Venustiano Carranza en 1916 (estableciendo el águila de perfil) y perfeccionado técnicamente por los artistas Francisco Eppens y Pedro Moctezuma en 1968.</p>
           </div>
         </details>
 
@@ -158,11 +237,14 @@ summary::-webkit-details-marker {
   </main>
 
   <!-- Pie de pagina -->
-  <footer class="bg-[#004d35] text-white text-center py-6">
+  <footer class="bg-[#004d35] text-white text-center py-6 w-full">
     <p class="font-bold">¡Viva México! - Mes Patrio</p>
     <p class="text-xs text-gray-300 mt-1">Kevin Raúl González Chávez</p>
     <p class="text-xs text-gray-400">23308051280594 - 5º I Programación</p>
   </footer>
 
+  <script>
+    lucide.createIcons();
+  </script>
 </body>
 </html>
