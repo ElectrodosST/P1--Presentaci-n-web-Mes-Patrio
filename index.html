@@ -9,7 +9,6 @@
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js"></script>
 
   <style>
-
 html {
   scroll-behavior: smooth;
 }
@@ -21,13 +20,11 @@ body {
   margin: 0;
 }
 
-
 .franja {
   height: 6px;
   background: linear-gradient(to right, #006847 0 33%, #ffffff 33% 66%, #ce1126 66% 100%);
 }
 
-/* tarjetas de los personajes historicos */
 .card-personaje {
   background: white;
   border-top: 5px solid #006847;
@@ -41,7 +38,6 @@ body {
 .card-roja {
   border-top-color: #ce1126;
 }
-
 
 details {
   background: white;
@@ -62,14 +58,14 @@ summary {
   min-height: 450px;
 }
 
-/* para que se note en que pagina estoy parado dentro del menu */
 .activo {
   color: #ce1126;
 }
   </style>
 </head>
-<body>
+<body class="min-h-screen flex flex-col justify-between">
 
+  <!-- Menu de navegacion principal -->
   <header class="sticky top-0 z-10 bg-white border-b border-gray-200">
     <nav class="max-w-6xl mx-auto flex justify-between items-center p-4">
       <a href="index.html" class="text-xl font-bold text-[#006847]">Mes Patrio 🇲🇽</a>
@@ -84,7 +80,8 @@ summary {
     </nav>
   </header>
 
-  <main>
+  <!-- Contenido principal -->
+  <main class="flex-grow">
 
     <section class="hero flex items-center justify-center text-center text-white px-4">
       <div class="max-w-xl">
@@ -98,9 +95,10 @@ summary {
         </div>
       </div>
     </section>
+    
     <div class="franja"></div>
 
-    <!-- ===================== TARJETAS PARA IR A CADA PAGINA ===================== -->
+    <!-- Tarjetas de navegacion -->
     <section class="max-w-5xl mx-auto py-12 px-4">
       <h2 class="text-3xl font-bold text-[#006847]">¿Qué vas a encontrar aquí?</h2>
       <div class="w-16 h-1 bg-[#ce1126] my-2 mb-8"></div>
@@ -132,19 +130,10 @@ summary {
       </div>
     </section>
 
-    <section class="bg-[#004d35] text-white py-12 px-4 text-center">
-      <div class="max-w-2xl mx-auto">
-        <i data-lucide="bell" class="mx-auto mb-3 h-8 w-8 text-yellow-400"></i>
-        <h2 class="text-2xl font-bold">La Tradición del Grito</h2>
-        <p class="mt-3 text-sm text-gray-200">
-          Cada 15 de septiembre en la noche, las autoridades en los municipios y el Presidente en Palacio Nacional tocan la campana y recuerdan a los héroes que nos dieron patria, cerrando con los tres "¡Viva México!".
-        </p>
-      </div>
-    </section>
   </main>
 
-  <!-- ===================== PIE DE PAGINA ===================== -->
-  <footer class="bg-[#004d35] text-white text-center py-6">
+  <!-- Pie de pagina -->
+  <footer class="bg-[#004d35] text-white text-center py-6 w-full">
     <p class="font-bold">¡Viva México! - Mes Patrio</p>
     <p class="text-xs text-gray-300 mt-1">Kevin Raúl González Chávez</p>
     <p class="text-xs text-gray-400">23308051280594 - 5º I Programación</p>
