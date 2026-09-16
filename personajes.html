@@ -7,8 +7,6 @@
 
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <style>
-
-
 html {
   scroll-behavior: smooth;
 }
@@ -19,7 +17,6 @@ body {
   color: #222;
   margin: 0;
 }
-
 
 .franja {
   height: 6px;
@@ -40,7 +37,6 @@ body {
   border-top-color: #ce1126;
 }
 
-
 details {
   background: white;
   border-bottom: 1px solid #ccc;
@@ -51,7 +47,6 @@ summary {
   cursor: pointer;
 }
 
-
 .hero {
   position: relative;
   background-image: linear-gradient(rgba(0, 77, 53, 0.8), rgba(0, 77, 53, 0.8)),
@@ -61,15 +56,14 @@ summary {
   min-height: 450px;
 }
 
-
 .activo {
   color: #ce1126;
 }
   </style>
 </head>
-<body>
+<body class="min-h-screen flex flex-col justify-between">
 
-
+  <!-- Menu de navegacion principal -->
   <header class="sticky top-0 z-10 bg-white border-b border-gray-200">
     <nav class="max-w-6xl mx-auto flex justify-between items-center p-4">
       <a href="index.html" class="text-xl font-bold text-[#006847]">Mes Patrio 🇲🇽</a>
@@ -84,14 +78,16 @@ summary {
     </nav>
   </header>
 
-
-  <main>
+  <!-- Seccion de personajes principales -->
+  <main class="flex-grow">
     <section class="bg-stone-200 py-12 px-4">
       <div class="max-w-5xl mx-auto">
         <h2 class="text-3xl font-bold text-[#006847]">Personajes Principales</h2>
         <p class="text-gray-600 mb-8">Líderes destacados de la Independencia:</p>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+          <!-- Miguel Hidalgo -->
           <div class="card-personaje">
             <img class="w-full h-56 object-cover object-top rounded-t"
                  src="https://commons.wikimedia.org/wiki/Special:FilePath/Miguel_Hidalgo_y_Costilla.png?width=500"
@@ -103,6 +99,7 @@ summary {
             </div>
           </div>
 
+          <!-- José María Morelos -->
           <div class="card-personaje card-roja">
             <img class="w-full h-56 object-cover object-top rounded-t"
                  src="https://commons.wikimedia.org/wiki/Special:FilePath/Mexico.JoseMariaMorelos.01.jpg?width=500"
@@ -114,6 +111,7 @@ summary {
             </div>
           </div>
 
+          <!-- Josefa Ortiz de Domínguez -->
           <div class="card-personaje">
             <img class="w-full h-56 object-cover object-top rounded-t"
                  src="https://commons.wikimedia.org/wiki/Special:FilePath/Josefa_Ortiz,_%C3%B3leo_sobre_tela.jpg?width=500"
@@ -125,6 +123,7 @@ summary {
             </div>
           </div>
 
+          <!-- Ignacio Allende -->
           <div class="card-personaje card-roja">
             <img class="w-full h-56 object-cover object-top rounded-t"
                  src="https://commons.wikimedia.org/wiki/Special:FilePath/Ignacio_Allende.jpg?width=500"
@@ -136,6 +135,7 @@ summary {
             </div>
           </div>
 
+          <!-- Vicente Guerrero -->
           <div class="card-personaje">
             <img class="w-full h-56 object-cover object-top rounded-t"
                  src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Vicente_Ram%C3%B3n_Guerrero_Salda%C3%B1a.jpg/250px-Vicente_Ram%C3%B3n_Guerrero_Salda%C3%B1a.jpg?utm_source=es.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
@@ -147,6 +147,7 @@ summary {
             </div>
           </div>
 
+          <!-- Agustín de Iturbide -->
           <div class="card-personaje card-roja">
             <img class="w-full h-56 object-cover object-top rounded-t"
                  src="https://commons.wikimedia.org/wiki/Special:FilePath/Agust%C3%ADn_de_Iturbide.jpg?width=500"
@@ -157,13 +158,62 @@ summary {
               <p class="text-sm text-gray-600 mt-2">Encabezó el Ejército Trigarante que entró a la Ciudad de México el 27 de septiembre de 1821.</p>
             </div>
           </div>
+
+          <!-- Guadalupe Victoria -->
+          <div class="card-personaje">
+            <img class="w-full h-56 object-cover object-top rounded-t"
+                 src="https://commons.wikimedia.org/wiki/Special:FilePath/Guadalupe_Victoria_Retrato.jpg?width=500"
+                 alt="Guadalupe Victoria">
+            <div class="p-4">
+              <span class="text-xs font-bold text-[#006847]">Primer Presidente</span>
+              <h3 class="font-bold text-lg mt-1">Guadalupe Victoria</h3>
+              <p class="text-sm text-gray-600 mt-2">Destacado militar insurgente en Veracruz que se convirtió en el primer Presidente constitucional de México.</p>
+            </div>
+          </div>
+
+          <!-- Leona Vicario -->
+          <div class="card-personaje card-roja">
+            <img class="w-full h-56 object-cover object-top rounded-t"
+                 src="https://commons.wikimedia.org/wiki/Special:FilePath/Leona_Vicario_-_Retrato.jpg?width=500"
+                 alt="Leona Vicario">
+            <div class="p-4">
+              <span class="text-xs font-bold text-[#ce1126]">Heroína de la Patria</span>
+              <h3 class="font-bold text-lg mt-1">Leona Vicario</h3>
+              <p class="text-sm text-gray-600 mt-2">Financió con su fortuna al ejército insurgente, transmitió mensajes secretos y fue una de las primeras periodistas mexicanas.</p>
+            </div>
+          </div>
+
+          <!-- Juan Aldama -->
+          <div class="card-personaje">
+            <img class="w-full h-56 object-cover object-top rounded-t"
+                 src="https://commons.wikimedia.org/wiki/Special:FilePath/Juan_Aldama.jpg?width=500"
+                 alt="Juan Aldama">
+            <div class="p-4">
+              <span class="text-xs font-bold text-[#006847]">Conspirador de Querétaro</span>
+              <h3 class="font-bold text-lg mt-1">Juan Aldama</h3>
+              <p class="text-sm text-gray-600 mt-2">Militar insurgente que llevó la noticia del descubrimiento de la conspiración a Miguel Hidalgo en Dolores.</p>
+            </div>
+          </div>
+
+          <!-- Francisco Xavier Mina -->
+          <div class="card-personaje card-roja">
+            <img class="w-full h-56 object-cover object-top rounded-t"
+                 src="https://commons.wikimedia.org/wiki/Special:FilePath/Francisco_Xavier_Mina.jpg?width=500"
+                 alt="Francisco Xavier Mina">
+            <div class="p-4">
+              <span class="text-xs font-bold text-[#ce1126]">Luchador Liberal</span>
+              <h3 class="font-bold text-lg mt-1">Francisco Xavier Mina</h3>
+              <p class="text-sm text-gray-600 mt-2">Militar español que viajó a México para combatir el absolutismo español y apoyar la causa insurgente en 1817.</p>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
   </main>
 
-  <!-- ===================== PIE DE PAGINA ===================== -->
-  <footer class="bg-[#004d35] text-white text-center py-6">
+  <!-- Pie de pagina -->
+  <footer class="bg-[#004d35] text-white text-center py-6 w-full">
     <p class="font-bold">¡Viva México! - Mes Patrio</p>
     <p class="text-xs text-gray-300 mt-1">Kevin Raúl González Chávez</p>
     <p class="text-xs text-gray-400">23308051280594 - 5º I Programación</p>
